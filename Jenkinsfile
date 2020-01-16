@@ -1,16 +1,10 @@
-pipeline
-{
-agent any
-{
-	stages
-	{
-	 stage
-	 {
-	 withMaven('1st step')
-	 {
-	 	'mvn clean install'
-	 }
-	 }
-	}
-}
+pipeline {
+    agent { docker { image 'maven:3.3.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
 }
