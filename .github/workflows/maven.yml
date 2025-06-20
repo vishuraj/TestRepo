@@ -37,9 +37,9 @@ jobs:
     - name: Deploy via SCP
       uses: appleboy/scp-action@v0.1.4
       with:
-        host: ${{ secrets.SERVER_IP }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        host: ${{ SECRETS.SERVER_IP }}
+        username: ${{ SECRETS.SERVER_USER }}
+        key: ${{ SECRETS.SSH_PRIVATE_KEY }}
         source: "target/*.jar"
         target: "/home/ubuntu/app"
   
